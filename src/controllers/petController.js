@@ -51,5 +51,12 @@ const adoptPet = async(req,res)=>{
     }
 }
 
+const getAllPet = async(req,res)=>{
+    try {
+        res.status(200).json(await Pet.findAll())
+    } catch (error) {
+        res.status(500).json({message:"Error Interno del servidor",detail:error})
+    }
+}
 
-export {createPet,updatePet,adoptPet}
+export {createPet,updatePet,adoptPet,getAllPet}
