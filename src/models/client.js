@@ -5,7 +5,7 @@ class Client extends Model{}
 
 Client.init({
     id:{
-        type:DataTypes.UUIDV4,
+        type:DataTypes.UUID,
         primaryKey:true,
         defaultValue: DataTypes.UUIDV4
     },
@@ -41,6 +41,6 @@ Client.init({
 }
 )
 
-Client.sync({force:true})
+//Client.sync({force:true})
 
 export default Client;
