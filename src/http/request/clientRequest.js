@@ -10,15 +10,12 @@ const createClientRequest = [
     check('name','Nombre Requerido').not().isEmpty(),
     check('address','Direccion Requerida').not().isEmpty(),
     check('phone','Telefono Requerido').not().isEmpty(),
-    check(['documentType','documentId']).custom(isClientExists),
+    check('documentId').custom(isClientExists),
     MessageErrorRequest
 ]
 
 const getClientBydocumentTypeAndDocumentIdRequest = [
-    validateJwt,        
-    check('documentType','Tipo de Documento Requerido').not().isEmpty(),
-    check('documentId','Numero de Documento Requerido').not().isEmpty(),
-    MessageErrorRequest
+    validateJwt    
 ]
 
 const updateClientRequest = [

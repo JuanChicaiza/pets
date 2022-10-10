@@ -44,6 +44,8 @@ const adoptPet = async(req,res)=>{
         await Pet.update({
             ClientId:clientId,
             StateId:2
+        },{
+            where:{id:id}
         })
         res.status(200).json(await Pet.findOne({where:{id:id}}))
     } catch (error) {

@@ -15,6 +15,7 @@ const isUserExists = async (documentId)=>{
 
 const isUserNameExists = async userName =>{
     const message = "userName ya registrado"
+    console.log(userName)
     try{
         const userNameExists = await User.findOne({where:{userName:userName}})
         if(userNameExists){
@@ -25,10 +26,10 @@ const isUserNameExists = async userName =>{
     }
 }
 
-const isClientExists = async(documentType,documentId)=>{
-    const message = "Cliente Ya Existe"
+const isClientExists = async(documentId)=>{
+    const message = "Cliente Ya Existe"    
     try{
-        const clientExists = await Client.findOne({where:{documentType:documentType,documentId:documentId}})
+        const clientExists = await Client.findOne({where:{documentId:documentId}})
         if(clientExists){
             throw new Error(message)
         }

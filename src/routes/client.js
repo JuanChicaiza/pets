@@ -5,7 +5,7 @@ import { createClientRequest,updateClientRequest,getClientBydocumentTypeAndDocum
 const clientRouter = Router()
 
 clientRouter.post("/client",createClientRequest,createClient)
-clientRouter.post("/client/get",getClientBydocumentTypeAndDocumentIdRequest,getClientBydocumentTypeAndDocumentId)
+clientRouter.get("/client/:documentType/:documentId",getClientBydocumentTypeAndDocumentIdRequest,getClientBydocumentTypeAndDocumentId)
 clientRouter.put("/client",updateClientRequest,updateClient)
 
 export {clientRouter}

@@ -26,12 +26,12 @@ const createBreed = async(req,res)=>{
 const updateBreed = async(req,res)=>{
     try {
         const {id,name,description} = req.body;
-        const breed = await Breed.update({
+        await Breed.update({
             name:name,
             description:description
         },
         {where:{id:id}})
-        res.status(200).json(breed)        
+        res.status(200).json(await Breed.findOne({where:{id:id}}))        
     } catch (error) {
         res.status(500).json({message:"Error Interno del servidor",detail:error})
     }    
