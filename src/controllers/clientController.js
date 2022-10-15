@@ -52,6 +52,14 @@ const getClientBydocumentTypeAndDocumentId = async(req,res)=>{
     }    
 }
 
+const getAllClients = async(req,res)=>{
+    try {
+        res.status(200).json(await Client.findAll())
+    } catch (error) {
+        res.status(500).json({message:"Error Interno del servidor",detail:error})
+    }
+}
+
 const deleteClient = async(req,res)=>{
     try {
         const id = req.params.id;
@@ -64,4 +72,4 @@ const deleteClient = async(req,res)=>{
     }
 }
 
-export {createClient,updateClient,getClientBydocumentTypeAndDocumentId,deleteClient}
+export {createClient,updateClient,getClientBydocumentTypeAndDocumentId,getAllClients,deleteClient}

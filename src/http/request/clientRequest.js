@@ -18,6 +18,10 @@ const getClientBydocumentTypeAndDocumentIdRequest = [
     validateJwt    
 ]
 
+const getClientRequest = [
+    validateJwt    
+]
+
 const updateClientRequest = [
     validateJwt,        
     check('id','Id Requerido').not().isEmpty(),
@@ -33,4 +37,4 @@ const deleteClientRequest = [
     validateJwt
 ]
 
-export {createClientRequest,updateClientRequest,getClientBydocumentTypeAndDocumentIdRequest,deleteClientRequest}
+export {createClientRequest,updateClientRequest,getClientBydocumentTypeAndDocumentIdRequest,deleteClientRequest,getClientRequest}

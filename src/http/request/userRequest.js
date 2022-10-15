@@ -4,7 +4,7 @@ import { isUserExists, isUserNameExists } from "../../utils/dbValidator.js";
 import { validateJwt } from "../middleware/validateJwt.js";
 
 const createUserRequest = [
-    validateJwt,
+    //validateJwt,
     check('documentType','Tipo de Documento Requerido').not().isEmpty(),
     check('documentId','Numero de Documento Requerido').not().isEmpty(),
     check('firstName','Nombre Requerido').not().isEmpty(),
