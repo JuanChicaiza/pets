@@ -46,4 +46,12 @@ const getBreedById = async(req,res)=>{
     }    
 }
 
-export { getAllBreedByType,createBreed,updateBreed,getBreedById }
+const getBreeds= async(req,res)=>{
+    try {
+        res.status(200).json(await Breed.findAll())        
+    } catch (error) {
+        res.status(500).json({message:"Error Interno del servidor",detail:error})
+    }    
+}
+
+export { getAllBreedByType,createBreed,updateBreed,getBreedById,getBreeds }

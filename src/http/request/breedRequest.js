@@ -16,6 +16,10 @@ const getBreedRequest = [
     param('id','Tipo de Raza requerido'),    
     MessageErrorRequest
 ]
+const getBreedsRequest = [
+    validateJwt        
+]
+
 
 const updateBreedRequest = [
     validateJwt,        
@@ -25,4 +29,4 @@ const updateBreedRequest = [
     MessageErrorRequest
 ]
 
-export {createBreedRequest,getBreedRequest,updateBreedRequest}
+export {createBreedRequest,getBreedRequest,updateBreedRequest,getBreedsRequest}
