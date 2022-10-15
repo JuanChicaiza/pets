@@ -29,4 +29,8 @@ const updateClientRequest = [
     MessageErrorRequest
 ]
 
-export {createClientRequest,updateClientRequest,getClientBydocumentTypeAndDocumentIdRequest}
+const deleteClientRequest = [
+    validateJwt
+]
+
+export {createClientRequest,updateClientRequest,getClientBydocumentTypeAndDocumentIdRequest,deleteClientRequest}
