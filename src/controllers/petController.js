@@ -61,4 +61,14 @@ const getAllPet = async(req,res)=>{
     }
 }
 
-export {createPet,updatePet,adoptPet,getAllPet}
+const getAllPetByClient = async(req,res)=>{
+    try {
+        const id = req.params.id;
+        const pets = await Pet.findAll({where:{ClientId:id}})
+        res.status(200).json(pets)
+    } catch (error) {
+        res.status(500).json({message:"Error Interno del servidor",detail:error})
+    }
+}
+
+export {createPet,updatePet,adoptPet,getAllPet,getAllPetByClient}

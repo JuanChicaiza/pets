@@ -34,4 +34,8 @@ const adoptPetRequest = [
     MessageErrorRequest
 ]
 
-export {createPetRequest,getAllPetRequest,updatePetRequest,adoptPetRequest}
+const getAllPetByClientRequest = [
+    validateJwt
+]
+
+export {createPetRequest,getAllPetRequest,updatePetRequest,adoptPetRequest,getAllPetByClientRequest}
